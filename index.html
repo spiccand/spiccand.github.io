@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Steven Piccand — Ingénieur de développement Java</title>
+    <meta name="description" content="Ingénieur de développement Java basé en Suisse.">
+    <style> :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22c55e
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    html, body {
+        height: 100%
+    }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+        background: radial-gradient(1200px 600px at 50% -10%, #111a2d, #0b1220 60%);
+        color: var(--fg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+
+    .card {
+        width: min(720px, 100%);
+        background: rgba(17, 24, 39, .65);
+        border: 1px solid #1f2937;
+        border-radius: 16px;
+        padding: 28px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        backdrop-filter: saturate(140%) blur(6px);
+    }
+
+    h1 {
+        margin: 0 0 8px;
+        font-size: clamp(28px, 4.5vw, 42px);
+        font-weight: 800;
+        letter-spacing: .2px
+    }
+
+    .title {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(16px, 2.5vw, 20px)
+    }
+
+    .dot {
+        color: var(--accent)
+    }
+
+    footer {
+        margin-top: 14px;
+        color: #6b7280;
+        font-size: 12px
+    } </style>
+</head>
+<body>
+<main class="card" role="main" aria-label="Carte de présentation"><h1>Steven Piccand <span class="dot">- </span> Suisse</h1>
+    <p class="title">Ingénieur de développement Java</p>
+    <footer>© <span id="y"></span> Steven Piccand</footer>
+</main>
+<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>
