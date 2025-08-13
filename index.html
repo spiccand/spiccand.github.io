@@ -3,74 +3,303 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Steven Piccand — Ingénieur de développement Java</title>
-    <meta name="description" content="Ingénieur de développement Java basé en Suisse.">
+    <title>Steven Piccand — Ingénieur Développement Back‑End Java</title>
+    <meta name="description"
+          content="Steven Piccand, ingénieur de développement back-end Java (Spring), Genève, Suisse.">
     <style> :root {
-        --bg: #0b1220;
-        --fg: #e5e7eb;
-        --muted: #9ca3af;
-        --accent: #22c55e
+        --bg: #1f3864; /* fond clair comme un papier */
+        --ink: #1f2937; /* texte principal */
+        --muted: #6b7280; /* texte secondaire */
+        --card: #ffffff; /* cartes/blocs */
+        --line: #e5e7eb; /* séparateurs */
+        --accent: #d89262; /* vert discret pour accents */
     }
 
     * {
         box-sizing: border-box
     }
 
-    html, body {
-        height: 100%
-    }
-
     body {
         margin: 0;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
-        background: radial-gradient(1200px 600px at 50% -10%, #111a2d, #0b1220 60%);
-        color: var(--fg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+    }
+
+    .wrap {
+        max-width: 960px;
+        margin: 32px auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
         padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    .card {
-        width: min(720px, 100%);
-        background: rgba(17, 24, 39, .65);
-        border: 1px solid #1f2937;
-        border-radius: 16px;
-        padding: 28px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-        backdrop-filter: saturate(140%) blur(6px);
-    }
-
-    h1 {
-        margin: 0 0 8px;
-        font-size: clamp(28px, 4.5vw, 42px);
+    .name {
+        font-size: clamp(26px, 3.6vw, 34px);
         font-weight: 800;
-        letter-spacing: .2px
+        letter-spacing: .3px;
     }
 
     .title {
-        margin: 0;
+        font-size: clamp(16px, 2.2vw, 18px);
         color: var(--muted);
-        font-size: clamp(16px, 2.5vw, 20px)
+        font-weight: 600;
     }
 
-    .dot {
-        color: var(--accent)
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    @media (min-width: 900px) {
+        .grid {
+            grid-template-columns: 1.2fr .8fr;
+        }
+    }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px 20px;
+    }
+
+    h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        letter-spacing: .2px;
+        border-left: 4px solid var(--accent);
+        padding-left: 10px;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+    li {
+        margin: 6px 0;
+    }
+
+    .kvs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px
+    }
+
+    .pill {
+        border: 1px solid var(--line);
+        background: #fafafa;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
+        color: #374151;
+    }
+
+    .muted {
+        color: var(--muted);
+    }
+
+    .list-plain {
+        list-style: none;
+        padding: 0;
+        margin: 0
+    }
+
+    .list-plain li {
+        margin: 6px 0
+    }
+
+    .cta {
+        display: inline-block;
+        background: var(--accent);
+        color: #0a2713;
+        font-weight: 800;
+        text-decoration: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #000000;
+    }
+
+    .row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .small {
+        font-size: 12px;
+        color: #4b5563
+    }
+
+    .sep {
+        height: 1px;
+        background: var(--line);
+        margin: 10px 0 6px
     }
 
     footer {
-        margin-top: 14px;
+        text-align: center;
         color: #6b7280;
-        font-size: 12px
+        font-size: 12px;
+        margin: 18px 0 8px;
+    }
+
+    a {
+        color: #0b57d0;
+        text-decoration: none
+    }
+
+    a:hover {
+        text-decoration: underline
+    }
+
+    /* badges de niveau (visuel simple) */
+    .level {
+        display: inline-grid;
+        grid-auto-flow: column;
+        gap: 3px;
+        margin-left: 8px;
+        vertical-align: middle
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d1d5db;
+        border: 1px solid #c7cdd6;
+    }
+
+    .dot.on {
+        background: var(--accent);
+        border-color: #000000
     } </style>
 </head>
 <body>
-<main class="card" role="main" aria-label="Carte de présentation"><h1>Steven Piccand <span class="dot">- </span> Suisse</h1>
-    <p class="title">Ingénieur de développement Java</p>
-    <span><a href="CV_2025.pdf">Curriculum Vitae</a></span>
-    <footer>© <span id="y"></span> Steven Piccand</footer>
-</main>
-<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+<div class="wrap">
+    <header aria-label="En-tête">
+        <div class="name">STEVEN PICCAND</div>
+        <div class="title">Ingénieur Développement Back‑End Java</div>
+        <div class="row"><a class="cta" href="CV_2025.pdf" download>Voir le CV (PDF)</a> <span class="small muted">Genève, Suisse - Disponible</span>
+        </div>
+    </header>
+
+    <div class="grid">
+        <main class="card" aria-label="Contenu principal">
+            <h2>Profil</h2>
+            <p>Ingénieur passionné par la conception, l’optimisation et l’automatisation de solutions métiers en
+                Java/Spring. Expérience en environnements réglementés (santé, administration). Orienté fiabilité,
+                performance et transmission des bonnes pratiques.</p>
+
+            <div class="sep"></div>
+
+            <h2>Réalisations marquantes</h2>
+            <ul>
+                <li><strong>Tropimed</strong> — App scientifique vaccins, GWT, multi‑langues, offline/online.</li>
+                <li><strong>SPIDI (OMPI)</strong> — Accélération traitement 24h → 45 min, suivi temps réel.</li>
+                <li><strong>SIPF</strong> — Interfaces impôt, supervision des tests automatisés.</li>
+                <li><strong>e‑Voting</strong> — Conception et sécurisation d’un système officiel de votations en ligne.
+                </li>
+            </ul>
+
+            <div class="sep"></div>
+
+            <h2>Expérience</h2>
+            <ul>
+                <li><strong>OFAC</strong> — Ingénieur backend (2013 — …)<br>
+                    Java/Spring/Hibernate (microservices), automatisation, documentation, réduction des erreurs et
+                    amélioration de la maintenance.
+                </li>
+                <li><strong>Cross‑Systems SA</strong> — Développeur Senior / Concepteur / Responsable testing (2004 —
+                    2013)<br>
+                    Développements Java/J2EE, supervision tests et interfaces, conception d’architecture.
+                </li>
+                <li><strong>Autres</strong> — Sitefine.com, Hewlett‑Packard, Agilent, Summerhouse SA, SynerCom SA (1996
+                    — 2004)
+                </li>
+            </ul>
+        </main>
+
+        <aside class="card" aria-label="Informations latérales">
+
+            <h2>Compétences</h2>
+            <ul class="list-plain">
+                <li>Java
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot on"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Spring
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot on"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Microservices
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot on"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Hibernate
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot on"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Maven
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot on"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Git
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot"></span><span class="dot"></span>
+        </span>
+                </li>
+                <li>Sonar / IntelliJ IDEA
+                    <span class="level" aria-hidden="true">
+          <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span
+                            class="dot"></span><span class="dot"></span>
+        </span>
+                </li>
+            </ul>
+
+            <div class="sep"></div>
+
+            <h2>Langues</h2>
+            <ul class="list-plain">
+                <li>Français — C2</li>
+                <li>Anglais — B1</li>
+                <li>Espagnol — A1</li>
+            </ul>
+
+            <div class="sep"></div>
+
+            <h2>Formation</h2>
+            <p>Diplôme fédéral d’informaticien de gestion — ESIG (1994–1996)</p>
+        </aside>
+    </div>
+
+    <footer>© <span id="y"></span> Steven Piccand — Page inspirée du CV</footer>
+</div>
+<script> document.getElementById('y').textContent = new Date().getFullYear(); </script>
 </body>
 </html>
