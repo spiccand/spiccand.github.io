@@ -92,22 +92,6 @@
         margin: 6px 0;
     }
 
-    .kvs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 8px
-    }
-
-    .pill {
-        border: 1px solid var(--line);
-        background: #fafafa;
-        border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 12px;
-        color: #374151;
-    }
-
     .muted {
         color: var(--muted);
     }
@@ -115,11 +99,14 @@
     .list-plain {
         list-style: none;
         padding: 0;
-        margin: 0
+        margin: 0;
+        width: 300px;
     }
 
     .list-plain li {
-        margin: 6px 0
+        display: flex;
+        margin: 6px 0;
+        width: 300px;
     }
 
     .cta {
@@ -172,21 +159,23 @@
         display: inline-grid;
         grid-auto-flow: column;
         gap: 3px;
-        margin-left: 8px;
-        vertical-align: middle
+        margin-left: auto;
+        vertical-align: middle;
     }
 
     .dot {
+        display: block;
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background: #d1d5db;
         border: 1px solid #c7cdd6;
+        margin-top: 6px;
     }
 
     .dot.on {
         background: var(--accent);
-        border-color: #000000
+        border-color: #000000;
     } </style>
 </head>
 <body>
@@ -286,19 +275,23 @@
 
             <h2>Langues</h2>
             <ul class="list-plain">
-                <li>Français — C2</li>
-                <li>Anglais — B1</li>
-                <li>Espagnol — A1</li>
+                <li>Français<span class="level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>&nbsp;&nbsp; C2</span></li>
+                <li>Anglais<span class="level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span>&nbsp; B1</span></li>
+                <li>Espagnol<span class="level"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp; A1</span></li>
             </ul>
 
             <div class="sep"></div>
 
             <h2>Formation</h2>
             <p>Diplôme fédéral d’informaticien de gestion — ESIG (1994–1996)</p>
+            <p>Stages : Java & optimisation,
+                Documentum, gestion de la
+                relation client, techniques de
+                vente</p>
         </aside>
     </div>
 
-    <footer>© <span id="y"></span> Steven Piccand — Page inspirée du CV</footer>
+    <footer>© <span id="y"></span> Steven Piccand</footer>
 </div>
 <script> document.getElementById('y').textContent = new Date().getFullYear(); </script>
 </body>
